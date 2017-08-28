@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h1 class="text-center text-dark">Truffle Box</h1>
+      <h4 class="text-center text-primary">Skeleton SvelteJS truffle box</h4>
+    
+      <div class="alert alert-success">
+        <h4>Good to Go!</h4>
+        <p>Your Truffle Box is installed and ready.</p>
+      </div>
+    
+      <div class="alert alert-secondary">
+        <h4>Smart Contract Example</h4>
+        <p>If your contracts compiled and migrated successfully, below will show a stored value of 5 (by default).</p>
+        <p>Try changing the value stored on <strong>line 59</strong> of App.js.</p>
+        <p>The stored value is: {{ storageValue }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import SimpleStorageContract from '../../../build/contracts/SimpleStorage.json'
+  import getWeb3 from '../../utils/web3'
+  import shoelace from 'shoelace-css/dist/shoelace.css'
+  import contract from 'truffle-contract'
+
+  export default {
+    oncreate () {
+      getWeb3
+      .then(({ web3 }) => {
+        this.set({ web3 })
+
+        // Instantiate contract once web3 provided.
+        this.instantiateContract()
+      })
+    },
+
+    methods: {
+      instantiateContract () {
+        /*
+          * SMART CONTRACT EXAMPLE
+          *
+          * Normally these functions would be called in the context of a
+          * state management library, but for convenience I've placed them here.
+          */
+    
+        const web3 = this.get('web3')
+        const simpleStorage = contract(SimpleStorageContract)
+        simpleStorage.setProvider(web3.currentProvider)
+    
+        // Declaring this for later so we can chain functions on SimpleStorage.
+        let simpleStorageInstance
+    
+        // Get accounts.
+        web3.eth.getAccounts((error, accounts) => {
+          if (error) { throw error }
+
+          simpleStorage.deployed().then(instance => {
+            simpleStorageInstance = instance
+    
+            // Stores a given value, 5 by default.
+            return simpleStorageInstance.set(5, { from: accounts[0] })
+          }).then(result => {
+            // Get the value from the contract to prove it worked.
+            return simpleStorageInstance.get.call({ from: accounts[0] })
+          }).then(result => {
+            // Update state with the result.
+            return this.set({ storageValue: result.c[0] })
+          })
+        })
+      }
+    }
+  }
+</script>

@@ -1,0 +1,29 @@
+{
+  "name": "svelte-box",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "watch": "node ./scripts/watch.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antony Jones",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.0",
+    "rollup-plugin-copy": "^0.2.3",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-postcss": "^0.5.4",
+    "rollup-plugin-url": "^1.2.0",
+    "shoelace-css": "^1.0.0-beta20",
+    "truffle-contract": "^1.1.8",
+    "truffle-solidity-loader": "0.0.8",
+    "web3": "^0.20.1"
+  }
+}
