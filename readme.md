@@ -27,3 +27,19 @@ truffle unbox svelte-box
 ## Usage
 
 Components are in `src/components/*.html`. Everything else is in the usual place [according to the docs](https://github.com/trufflesuite/truffle-init-default)
+
+Run the watch task to have the code updated in realtime as you develop:
+
+```javascript
+npm run watch
+```
+
+## Publishing
+
+To produce your production dApp, run the build task:
+
+```javascript
+npm run build
+```
+
+This will publish your completed dApp to the folder `./build`
