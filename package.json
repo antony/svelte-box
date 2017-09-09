@@ -7,6 +7,8 @@
     "test": "test"
   },
   "scripts": {
+    "clean": "rm -rf ./build && mkdir ./build",
+    "build": "rollup --config ./config/rollup.config.js",
     "watch": "node ./scripts/watch.js",
     "test": "truffle test"
   },
@@ -15,13 +17,14 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "mocha": "^3.5.0",
+    "ora": "^1.3.0",
+    "rollup": "^0.49.3",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.0",
     "rollup-plugin-copy": "^0.2.3",
     "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-postcss": "^0.5.4",
-    "rollup-plugin-url": "^1.2.0",
     "shoelace-css": "^1.0.0-beta20",
     "truffle-contract": "^1.1.8",
     "truffle-solidity-loader": "0.0.8",
