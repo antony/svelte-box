@@ -21,7 +21,7 @@ A [truffle box](http://truffleframework.com/boxes/) is a seed project for buildi
 ## Installation
 
 ```
-truffle unbox svelte-box
+truffle unbox antony/svelte-box
 ```
 
 ## Usage
