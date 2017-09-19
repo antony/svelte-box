@@ -31,6 +31,7 @@ Components are in `src/components/*.html`. Everything else is in the usual place
 Run the watch task to have the code updated in realtime as you develop:
 
 ```javascript
+truffle compile
 npm run watch
 ```
 

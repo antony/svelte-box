@@ -8,12 +8,16 @@
   },
   "scripts": {
     "clean": "rm -rf ./build && mkdir ./build",
+    "compile": "truffle compile",
     "build": "rollup --config ./config/rollup.config.js",
-    "watch": "node ./scripts/watch.js",
+    "watch": "WATCH=true node ./scripts/watch.js",
     "test": "truffle test"
   },
   "author": "Antony Jones",
   "license": "MIT",
+  "peerDependencies": {
+    "truffle": "3.x"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "mocha": "^3.5.0",
@@ -23,12 +27,14 @@
     "rollup-plugin-commonjs": "^8.2.0",
     "rollup-plugin-copy": "^0.2.3",
     "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-livereload": "^0.6.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-postcss": "^0.5.4",
+    "rollup-plugin-serve": "^0.4.2",
     "rollup-plugin-svelte": "^3.1.0",
     "shoelace-css": "^1.0.0-beta20",
-    "truffle-contract": "^1.1.8",
-    "truffle-solidity-loader": "0.0.8",
+    "truffle-contract": "^2.0.5",
     "web3": "^0.20.1"
-  }
+  },
+  "dependencies": {}
 }
