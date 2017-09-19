@@ -9,7 +9,7 @@
     "test": "truffle test && npm test",
     "test:contracts": "truffle test",
     "test:app": "npm test",
-    "run:dev": "npm run dev",
+    "run:watch": "npm run watch",
     "package": "npm run build"
   },
   "hooks": {
