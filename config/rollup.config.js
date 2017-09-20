@@ -33,7 +33,9 @@ const plugins = [
 
 const devPlugins = [
   serve('build'),
-  liveReload()
+  liveReload({
+    watch: 'build'
+  })
 ]
 
 module.exports = [

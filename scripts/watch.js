@@ -19,12 +19,10 @@ function bundleStart () {
 function fatal (e) {
   spinners.bundle.fail()
   spinners.compilation.fail(`Compilation failed ${e.error.message}`)
-  console.error(e.error)
 }
 
 function error (e) {
   spinners.bundle.warn(`Bundle compilation failed ${e.error.message}`)
-  console.error(e.error)
 }
 
 function bundleEnd () {
