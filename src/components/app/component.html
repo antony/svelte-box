@@ -1,25 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-8 offset-2">
-      <h1 class="text-center text-dark">Truffle Box</h1>
+      <h1 class="masthead text-center text-dark">Truffle Box</h1>
       <h4 class="text-center text-primary">Skeleton SvelteJS truffle box</h4>
     
-      {{#if connected}}
-        <div class="alert alert-success">
-          <h4>Good to Go!</h4>
-          <p>Your Truffle Box is installed and ready.</p>
-        </div>
-      {{else}}
-        <div class="alert alert-danger">
-          <h4>Not connected</h4>
-          <p>Could not connect to the blockchain!<p>
-          <p>Check that:</p>
-          <ul>
-            <li>Your <a href="https://metamask.io/" target="_blank">metamask</a> settings are correct.</li>
-            <li>You are running an ethereum <a href="" target="_blank">testrpc</a>.</li>
-          </ul>
-        </div>
-      {{/if}}
+      <information connected="{{storageValue}}"></information>
     
       <div class="alert alert-secondary">
         <h4>Smart Contract Example</h4>
@@ -31,7 +16,14 @@
   </div>
 </div>
 
+<style>
+  .masthead {
+    margin-top: 3em;
+  }
+</style>
+
 <script>
+  import information from '../information/component.html'
   import SimpleStorageContract from '../../../build/contracts/SimpleStorage.json'
   import getWeb3 from '../../utils/web3'
   import shoelace from 'shoelace-css/dist/shoelace.css'
@@ -46,6 +38,10 @@
         // Instantiate contract once web3 provided.
         this.instantiateContract()
       })
+    },
+
+    components: {
+      information
     },
 
     methods: {
