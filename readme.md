@@ -28,9 +28,16 @@ truffle unbox antony/svelte-box
 
 Components are in `src/components/*.html`. Everything else is in the usual place [according to the docs](https://github.com/trufflesuite/truffle-init-default)
 
-Run the watch task to have the code updated in realtime as you develop:
+Run the testrpc so that you have a blockchain to work with, and deploy your contracts:
 
-```javascript
+```bash
+testrpc
+truffle deploy
+```
+
+Log in to metamask by importing the HD Wallet that testrpc gave you, and do the same for one of the accounts by entering its private key. Then, run the watch task to have the code updated in realtime as you develop:
+
+```bash
 truffle compile
 npm run watch
 ```
@@ -39,7 +46,7 @@ npm run watch
 
 To produce your production dApp, run the build task:
 
-```javascript
+```bash
 npm run build
 ```
 
