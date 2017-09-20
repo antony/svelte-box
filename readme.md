@@ -1,3 +1,5 @@
+![box-img-sm-template](https://user-images.githubusercontent.com/218949/30648843-e3b2e176-9e16-11e7-8ecb-f2e4df8f93e3.png "Svelte")
+
 ## SvelteJS Truffle Box
 
 A Truffle box using SvelteJS and Rollup.
