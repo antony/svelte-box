@@ -4,10 +4,6 @@
 
 A Truffle box using SvelteJS and Rollup.
 
-### Project Status
-
-Working, but a work in progress still.
-
 ### Project Goal
 
 To provide the simplest, cleanest seed for building an Ethereum dapp using [Truffle](http://truffleframework.com/), with the minimum possible dependencies, meaning that beginners and pros a like have the most transparent possible method for developing [Ethereum](https://www.ethereum.org/) contracts.
