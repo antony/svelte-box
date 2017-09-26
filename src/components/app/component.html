@@ -4,7 +4,7 @@
       <h1 class="masthead text-center text-dark">Truffle Box</h1>
       <h4 class="text-center text-primary">Skeleton SvelteJS truffle box</h4>
     
-      <information connected="{{storageValue}}"></information>
+      <Information connected="{{storageValue}}"></Information>
     
       <div class="alert alert-secondary">
         <h4>Smart Contract Example</h4>
@@ -23,7 +23,7 @@
 </style>
 
 <script>
-  import information from '../information/component.html'
+  import Information from '../information/component.html'
   import SimpleStorageContract from '../../../build/contracts/SimpleStorage.json'
   import getWeb3 from '../../utils/web3'
   import shoelace from 'shoelace-css/dist/shoelace.css'
@@ -41,7 +41,7 @@
     },
 
     components: {
-      information
+      Information
     },
 
     methods: {
