@@ -23,7 +23,7 @@
 </style>
 
 <script>
-  import Information from '../information/component.html'
+  import Information from '../information/component.svelte'
   import SimpleStorageContract from '../../../build/contracts/SimpleStorage.json'
   import getWeb3 from '../../utils/web3'
   import shoelace from 'shoelace-css/dist/shoelace.css'

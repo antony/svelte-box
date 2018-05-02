@@ -2,7 +2,7 @@
 
 ## SvelteJS Truffle Box
 
-A Truffle box using SvelteJS and Rollup.
+A Truffle box using [SvelteJS](https://svelte.technology/) and [ParcelJS](https://parceljs.org/).
 
 This box contains everything you need to start building a smart-contract app.
 
@@ -22,12 +22,16 @@ A [truffle box](http://truffleframework.com/boxes/) is a seed project for buildi
 
 Additionally, the [Svelte](https://svelte.technology) API is so simple and well-designed, you can learn the whole thing from scratch in less than an hour!
 
+### Why Parcel?
+
+[ParcelJS](https://parceljs.org/) is the convention-over-configuration packager, compiler, and bundler for javascript. Rather than reams of configuration and endless plugin modules, it requires no configuration, and is blazing fast.
+
 ## Setting up
 
 1. Install truffle and an ethereum client. For local development, try Ethereum TestRPC.
     ```javascript
     npm install -g truffle // Version 3.0.5+ required.
-    npm install -g ethereumjs-testrpc
+    npm install -g ganache-cli // Or the ganache GUI will work too.
     ```
 
 2. Download box.
@@ -37,10 +41,10 @@ Additionally, the [Svelte](https://svelte.technology) API is so simple and well-
 
 4. Run an Ethereum RPC. For simplicity and development we will be using Ethereum TestRPC.
     ```javascript
-    testrpc
+    ganache-cli
     ```
 
-7. Compile and migrate the contracts.
+7. Compile and migrate the contracts after authenticating your account on the blockchain (i.e. restoring from seed in MetaMask).
     ```javascript
     truffle compile
     truffle migrate
@@ -74,7 +78,7 @@ To produce your production dApp, run the build task:
 npm run build
 ```
 
-This will publish your completed dApp to the folder `./build`
+This will publish your completed dApp to the folder `./dist`
 
 ## Testing
 
@@ -83,13 +87,13 @@ Testing works much the same way as it does in any web-application, with an addit
 Be sure you've compiled your contracts before running the tests, or you'll get file not found errors.
 
     ```javascript
-    npm run test // for dApp tests
-    truffle test // for contract tests
+    npm run test:unit // for dApp tests
+    npm run test:contract // for contract tests
     ```
 
 ## Releasing
 
-To build the application for production, use the build command. A production build will be in the build folder.
+To build the application for production, use the build command. A production build will be in the `./dist` folder.
 
     ```javascript
     npm run build
