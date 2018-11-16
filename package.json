@@ -28,7 +28,7 @@
     "shoelace-css": "^1.0.0-beta24",
     "svelte": "^2.15.3",
     "truffle-contract": "^3.0.6",
-    "web3": "github:ethereum/web3.js"
+    "web3": "^1.0.0-beta.36"
   },
   "dependencies": {},
   "svelte": {

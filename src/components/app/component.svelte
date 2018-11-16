@@ -1,3 +1,5 @@
+<svelte:window on:load="initWeb3()" />
+
 <div class="container">
   <div class="row">
     <div class="col-8 offset-2">
@@ -30,21 +32,19 @@
   import contract from 'truffle-contract'
 
   export default {
-    oncreate () {
-      getWeb3
-      .then(({ web3 }) => {
-        this.set({ web3 })
-
-        // Instantiate contract once web3 provided.
-        this.instantiateContract()
-      })
-    },
-
     components: {
       Information
     },
 
     methods: {
+      initWeb3 () {
+        getWeb3.then(web3 => {
+          this.set({ web3 })
+          window['web3'] = web3
+          this.instantiateContract()
+        })
+      },
+
       instantiateContract () {
         /*
           * SMART CONTRACT EXAMPLE
@@ -53,7 +53,7 @@
           * state management library, but for convenience I've placed them here.
           */
     
-        const web3 = this.get('web3')
+        const { web3 } = this.get()
         const simpleStorage = contract(SimpleStorageContract)
         simpleStorage.setProvider(web3.currentProvider)
     

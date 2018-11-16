@@ -1,36 +1,24 @@
-import Web3 from 'web3'
+import { default as Web3 } from 'web3'
 
-export default new Promise(function(resolve, reject) {
-  // Wait for loading completion to avoid race conditions with web3 injection timing.
-  window.addEventListener('load', function() {
-    var results
-    var web3 = window.web3
+export default new Promise((resolve) => {
+  let web3 = window.web3
 
-    // Checking if Web3 has been injected by the browser (Mist/MetaMask)
-    if (typeof web3 !== 'undefined') {
-      // Use Mist/MetaMask's provider.
-      web3 = new Web3(web3.currentProvider)
+  if (typeof web3 !== 'undefined') {
+    console.warn(
+      'Using web3 detected from external source.' +
+      ' If using MetaMask, see the following link.' +
+      ' Feel free to delete this warning. :)' +
+      ' http://truffleframework.com/tutorials/truffle-and-metamask'
+    )
 
-      results = {
-        web3: web3
-      }
-
-      console.log('Injected web3 detected.');
-
-      resolve(results)
-    } else {
-      // Fallback to localhost if no web3 injection.
-      var provider = new Web3.providers.HttpProvider('http://localhost:8545')
-
-      web3 = new Web3(provider)
-
-      results = {
-        web3: web3
-      }
-
-      console.log('No web3 instance injected, using Local web3.');
-
-      resolve(results)
-    }
-  })
+    resolve(new Web3(web3.currentProvider))
+  } else {
+    console.warn(
+      'No web3 detected. Falling back to http://127.0.0.1:8545.' +
+      ' You should remove this fallback when you deploy live, as it\'s inherently insecure.' +
+      ' Consider switching to Metamask for development.' +
+      ' More info here: http://truffleframework.com/tutorials/truffle-and-metamask'
+    )
+    resolve(new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545')))
+  }
 })
