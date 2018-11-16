@@ -1,9 +1,9 @@
-{{#if connected}}
+{#if connected}
 <div class="alert alert-success">
   <h4>Good to Go!</h4>
   <p>Your Truffle Box is installed and ready.</p>
 </div>
-{{else}}
+{else}
 <div class="alert alert-danger">
   <h4>Not connected</h4>
   <p>Could not connect to the blockchain!<p>
@@ -13,7 +13,7 @@
     <li>You are running an ethereum <a href="https://www.npmjs.com/package/truffle-testrpc" target="_blank">testrpc</a>.</li>
   </ul>
 </div>
-{{/if}}
+{/if}
 
 <script>
   export default {

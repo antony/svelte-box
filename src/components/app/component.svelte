@@ -4,13 +4,13 @@
       <h1 class="masthead text-center text-dark">Truffle Box</h1>
       <h4 class="text-center text-primary">Skeleton SvelteJS truffle box</h4>
     
-      <Information connected="{{storageValue}}"></Information>
+      <Information connected="{storageValue}"></Information>
     
       <div class="alert alert-secondary">
         <h4>Smart Contract Example</h4>
         <p>If your contracts compiled and migrated successfully, below will show a stored value of 5 (by default).</p>
         <p>Try changing the value stored on <strong>line 71</strong> of <em>src/components/app/component.html</em>.</p>
-        <p>The stored value is: {{ storageValue }}</p>
+        <p>The stored value is: { storageValue }</p>
       </div>
     </div>
   </div>

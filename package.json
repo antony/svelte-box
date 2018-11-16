@@ -22,13 +22,18 @@
     "truffle": "3.x"
   },
   "devDependencies": {
-    "mocha": "^4.0.1",
-    "parcel-bundler": "^1.7.1",
-    "parcel-plugin-svelte": "^0.2.1",
+    "mocha": "^5.2.0",
+    "parcel-bundler": "^1.10.3",
+    "parcel-plugin-svelte": "^1.2.3",
     "shoelace-css": "^1.0.0-beta24",
-    "svelte": "^2.4.1",
-    "truffle-contract": "^3.0.5",
+    "svelte": "^2.15.3",
+    "truffle-contract": "^3.0.6",
     "web3": "github:ethereum/web3.js"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "svelte": {
+    "compilerOptions": {
+      "css": true
+    }
+  }
 }
