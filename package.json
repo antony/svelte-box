@@ -7,11 +7,14 @@
     "test": "test"
   },
   "scripts": {
-    "start": "parcel ./src/index.html",
-    "clean": "rm -rf ./dist ./build",
+    "build": "rollup -c",
+    "autobuild": "rollup -c -w",
+    "dev": "run-p start:dev autobuild",
+    "start": "sirv public --single",
+    "start:dev": "sirv public --single --dev",
+    "clean": "rm -rf ./dist ./build ./public/bundle.*",
     "compile": "truffle compile",
-    "build": "parcel build ./src/index.html",
-    "watch": "parcel watch ./src/index.html",
+    "deploy": "truffle deploy",
     "test": "npm run test:unit && npm run test:contract",
     "test:unit": "mocha",
     "test:contract": "truffle test"
@@ -22,15 +25,29 @@
     "truffle": "3.x"
   },
   "devDependencies": {
+    "@beyonk/async-script-loader": "^1.0.3",
+    "browserslist": "^4.6.6",
+    "caniuse-lite": "^1.0.30000989",
+    "copy-webpack-plugin": "^5.0.4",
     "mocha": "^5.2.0",
-    "parcel-bundler": "^1.10.3",
-    "parcel-plugin-svelte": "^1.2.3",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.19.4",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-livereload": "^1.0.1",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-svelte": "^5.1.0",
+    "rollup-plugin-terser": "^5.1.1",
     "shoelace-css": "^1.0.0-beta24",
-    "svelte": "^2.15.3",
-    "truffle-contract": "^3.0.6",
-    "web3": "^1.0.0-beta.36"
+    "svelte": "^3.8.1",
+    "truffle-contract": "^4.0.29"
   },
-  "dependencies": {},
+  "dependencies": {
+    "sirv-cli": "^0.4.4"
+  },
   "svelte": {
     "compilerOptions": {
       "css": true

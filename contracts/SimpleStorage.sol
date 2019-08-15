@@ -1,13 +1,17 @@
-pragma solidity ^0.4.18;
+pragma solidity >=0.4.21 <0.6.0;
 
 contract SimpleStorage {
-  uint storedData;
+    event StorageSet(string _message);
 
-  function set(uint x) public {
-    storedData = x;
-  }
+    uint public storedData;
 
-  function get() public view returns (uint) {
-    return storedData;
-  }
+    function set(uint x) public {
+        storedData = x;
+
+        emit StorageSet("Data stored successfully!");
+    }
+
+    function get() view public returns (uint retVal) {
+        return storedData;
+    }
 }

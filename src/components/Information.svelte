@@ -3,7 +3,7 @@
   <h4>Good to Go!</h4>
   <p>Your Truffle Box is installed and ready.</p>
 </div>
-{else}
+{:else}
 <div class="alert alert-danger">
   <h4>Not connected</h4>
   <p>Could not connect to the blockchain!<p>
@@ -16,11 +16,5 @@
 {/if}
 
 <script>
-  export default {
-    data () {
-      return {
-        connected: false
-      }
-    }
-  }
+  export let connected = false
 </script>

@@ -2,7 +2,7 @@
 
 ## SvelteJS Truffle Box
 
-A Truffle box using [SvelteJS](https://svelte.technology/) and [ParcelJS](https://parceljs.org/).
+A Truffle box using [SvelteJS](https://svelte.technology/) and [Rollup](https://rollupjs.org/).
 
 This box contains everything you need to start building a smart-contract app.
 
@@ -22,9 +22,11 @@ A [truffle box](http://truffleframework.com/boxes/) is a seed project for buildi
 
 Additionally, the [Svelte](https://svelte.technology) API is so simple and well-designed, you can learn the whole thing from scratch in less than an hour!
 
-### Why Parcel?
+### Why Rollup?
 
-[ParcelJS](https://parceljs.org/) is the convention-over-configuration packager, compiler, and bundler for javascript. Rather than reams of configuration and endless plugin modules, it requires no configuration, and is blazing fast.
+Originally this project used ParcelJS but sadly Parcel's support for Svelte is currently broken, and has been for a while. I've switched to RollupJS in order to upgrade to Svelte 3.
+
+Currently, we load web3 from UNPKG, since it appears to be borderline impossible to bundle successfully. If anybody wants to open a PR to bundle Web3, it would be greatly appreciated.
 
 ## Setting up
 
@@ -63,11 +65,11 @@ testrpc
 truffle deploy
 ```
 
-Log in to metamask by importing the HD Wallet that testrpc gave you, and do the same for one of the accounts by entering its private key. Then, run the watch task to have the code updated in realtime as you develop:
+Log in to metamask by importing the HD Wallet that testrpc gave you, and do the same for one of the accounts by entering its private key. Then, run the dev task to have the code updated in realtime as you develop:
 
 ```bash
 truffle compile
-npm run watch
+npm run dev
 ```
 
 ## Publishing
