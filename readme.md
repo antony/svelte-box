@@ -1,4 +1,4 @@
-![box-img-sm-template](https://user-images.githubusercontent.com/218949/30648843-e3b2e176-9e16-11e7-8ecb-f2e4df8f93e3.png "Svelte")
+![box-img-lg-template](https://user-images.githubusercontent.com/218949/63261050-6ce11600-c27a-11e9-9355-1ee226b4497c.png)
 
 ## SvelteJS Truffle Box
 
