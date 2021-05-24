@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@beyonk/async-script-loader": "^1.0.3",
-    "browserslist": "^4.6.6",
+    "browserslist": "^4.16.5",
     "caniuse-lite": "^1.0.30000989",
     "copy-webpack-plugin": "^5.0.4",
     "mocha": "^5.2.0",
