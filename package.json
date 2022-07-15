@@ -42,7 +42,7 @@
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.1",
     "shoelace-css": "^1.0.0-beta24",
-    "svelte": "^3.8.1",
+    "svelte": "^3.49.0",
     "truffle-contract": "^4.0.29"
   },
   "dependencies": {
